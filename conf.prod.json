@@ -1,0 +1,6 @@
+{
+    "mongoDbAddress": "mongodb+srv://challengeUser:WUMglwNBaydH8Yvu@challenge-xzwqd.mongodb.net/getircase-study?retryWrites=true",
+    "logLevel": "debug",
+    "port": "11923",
+    "mongoDbName": "getircase-study"
+}

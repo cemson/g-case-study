@@ -1,0 +1,15 @@
+# daemon .service file for linux server
+[Unit]
+Description=Getir GoLang Case Study REST API Daemon
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/home/ubuntu/g-case-study
+ExecStart=/home/ubuntu/g-case-study/g-case-study prod
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target
