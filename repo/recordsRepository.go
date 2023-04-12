@@ -38,8 +38,7 @@ func (repo *RecordsRepository) FindRecordSummaries(startDate time.Time, endDate 
 
 	// Define pipeline stages
 	pipeline := []bson.M{
-		{"$addFields": bson.M{"dateColumn": bson.M{"$toDate": "$createdAt"}}},
-		{"$match": bson.M{"dateColumn": bson.M{"$gte": startDate, "$lte": endDate}}},
+		{"$match": bson.M{"createdAt": bson.M{"$gte": startDate, "$lte": endDate}}},
 		{"$project": bson.M{"key": "$key", "createdAt": "$createdAt", "totalCount": bson.M{"$sum": "$counts"}}},
 		{"$match": bson.M{"totalCount": bson.M{"$gte": countStart, "$lte": countEnd}}},
 	}
