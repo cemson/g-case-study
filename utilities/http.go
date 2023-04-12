@@ -21,7 +21,7 @@ func Success(responseWriter http.ResponseWriter, responseBody interface{}) {
 
 	err := json.NewEncoder(responseWriter).Encode(responseBody)
 	if err != nil {
-		logging.Log.Error("Json error: %v", err)
+		logging.Log.Errorf("Json error: %v", err)
 		return
 	}
 }
@@ -45,7 +45,7 @@ func writeMessageResponse(w http.ResponseWriter, message string) {
 	resp["message"] = fmt.Sprintf("%s.", message)
 	err := json.NewEncoder(w).Encode(resp)
 	if err != nil {
-		logging.Log.Error("Json error: %v", err)
+		logging.Log.Errorf("Json error: %v", err)
 		return
 	}
 }
